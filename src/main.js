@@ -1,11 +1,18 @@
-// Importing Bootstrap and custom CSS in JavaScript take advantage of Vite’s build and development features.
+// Bootstrap (npm)
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-// If you have custom global styles, import them as well:
+// ✅ Correct path to your CSS folder
 import '/styles/style.css';
 
-function sayHello() {
-  // TODO: implement your logic here
-}
-document.addEventListener('DOMContentLoaded', sayHello);
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('Bootstrap + Custom CSS loaded ✅');
+
+  const reviewForm = document.querySelector('#reviewForm');
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Review submitted (demo)');
+    });
+  }
+});

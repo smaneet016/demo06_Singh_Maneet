@@ -1,65 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>ElmoHikes | Review</title>
+    <meta name="comp1800 template" content="My 1800 App" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
 
-<head>
-    <title>My BCIT Project</title>
-    <meta name="comp1800 template" content="My 1800 App">
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="./images/dumbbell.png" height="36" alt="Logo" />
+          ElmoHikes
+        </a>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- Other libraries go here -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-</head>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="review.html"
+                >Review</a
+              >
+            </li>
+          </ul>
 
-<body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-info">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="./images/dumbbell.png" height="36">
-                ElmoHikes</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+          </form>
         </div>
+      </div>
     </nav>
 
-    <!-- copyright footer -->
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <p class="col-md-4 mb-0 text-muted">&copy; 2025 BCIT COMP1800</p>
-        <a href="/"
-            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32">
-                <use xlink:href="#bootstrap" />
-            </svg>
-        </a>
+    <!-- Form container (between navbar & footer) -->
+    <form class="container my-5" id="reviewForm">
+      <h2 class="mb-4">Hike Review</h2>
+
+      <!-- UI1: Text input -->
+      <div class="card-body mb-3">
+        <label for="hikename" class="form-label">Name of the hike:</label>
+        <input
+          type="text"
+          id="hikename"
+          name="hikename"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- UI2: Text area -->
+      <div class="card-body mb-3 mt-3">
+        <label for="comment" class="form-label">Comments:</label>
+        <textarea
+          class="form-control"
+          rows="5"
+          id="comment"
+          name="comment"
+          placeholder="Share your experience..."
+        ></textarea>
+      </div>
+
+      <!-- UI3: Radio button group -->
+      <div class="card-body mb-4">
+        <label class="form-label d-block mb-2">Was the trail flooded?</label>
+
+        <div class="btn-group" role="group" aria-label="Flood condition">
+          <input
+            type="radio"
+            class="btn-check"
+            name="floodStatus"
+            id="floodYes"
+            value="Flooded"
+            autocomplete="off"
+            checked
+          />
+          <label class="btn btn-outline-primary" for="floodYes">Flooded</label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="floodStatus"
+            id="floodNo"
+            value="No"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-primary" for="floodNo">No</label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="floodStatus"
+            id="floodMaybe"
+            value="Not Sure"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-primary" for="floodMaybe"
+            >Not Sure</label
+          >
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn-info">Submit Review</button>
+    </form>
+
+    <!-- Footer -->
+    <footer
+      class="container d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+    >
+      <p class="col-md-6 mb-0 text-muted">&copy; 2025 BCIT COMP1800</p>
     </footer>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript scripts go here    -->
-    <!---------------------------------------------->
+    <!-- Vite entry -->
     <script type="module" src="/src/main.js"></script>
-
-</body>
-
+  </body>
 </html>

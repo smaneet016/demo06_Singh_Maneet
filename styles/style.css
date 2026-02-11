@@ -1,1 +1,107 @@
+/* ============================= */
+/* Brand Colors */
+/* ============================= */
+:root {
+  --french-blue: #2f4475;
+  --peach-glow: #ffc599;
+  --lime-cream: #c5d86d;
+  --rosy-taupe: #ac8a86;
+  --mint-leaf: #4fba93;
+}
 
+/* ============================= */
+/* Base Styles */
+/* ============================= */
+body {
+  background-color: var(--peach-glow);
+  color: #1f2937;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ============================= */
+/* Navbar */
+/* ============================= */
+.navbar {
+  background-color: var(--french-blue) !important;
+}
+
+.navbar-brand,
+.navbar .nav-link {
+  color: #ffffff !important;
+}
+
+.navbar .nav-link:hover,
+.navbar-brand:hover {
+  color: var(--lime-cream) !important;
+}
+
+/* ============================= */
+/* Review Page Form Card Look */
+/* ============================= */
+form.container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================= */
+/* Form Controls */
+/* ============================= */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid var(--rosy-taupe);
+}
+
+.form-control:focus {
+  border-color: var(--mint-leaf);
+  box-shadow: 0 0 0 0.2rem rgba(79, 186, 147, 0.25);
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+/* ============================= */
+/* Radio Button Group */
+/* ============================= */
+.btn-group .btn {
+  border-color: var(--french-blue);
+  color: var(--french-blue);
+}
+
+.btn-group .btn:hover {
+  background-color: var(--lime-cream);
+  border-color: var(--lime-cream);
+  color: #1f2937;
+}
+
+.btn-check:checked + .btn {
+  background-color: var(--mint-leaf);
+  border-color: var(--mint-leaf);
+  color: #ffffff;
+}
+
+/* ============================= */
+/* Buttons */
+/* ============================= */
+.btn-primary,
+.btn-info {
+  background-color: var(--mint-leaf);
+  border-color: var(--mint-leaf);
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-info:hover {
+  background-color: var(--french-blue);
+  border-color: var(--french-blue);
+}
+
+/* ============================= */
+/* Footer */
+/* ============================= */
+footer {
+  color: var(--french-blue);
+  font-weight: 500;
+}
